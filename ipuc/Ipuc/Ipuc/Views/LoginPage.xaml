@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ipuc.Views.LoginPage"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+             BindingContext="{Binding Main,Source={StaticResource Locator}}"
+             Title="Login">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="10,20,10,5">
+        <ScrollView BindingContext="{Binding Login}">
+            <StackLayout Padding="5">
                 <Image
                     Source="logo"
                     WidthRequest="200">
                 </Image>
-                <Grid Margin="0,20">
+                <Grid Margin="10,0" VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -25,7 +26,8 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         Keyboard="Email"
-                        Placeholder="Enter your e-mail...">
+                        Placeholder="Enter your e-mail..."
+                        Text="{Binding Email, Mode=TwoWay}">
                     </Entry>
                     <Label
                         Grid.Row="1"
@@ -37,28 +39,40 @@
                         Grid.Row="1"
                         Grid.Column="1"
                         IsPassword="True"
-                        Placeholder="Enter your password...">
+                        Placeholder="Enter your password..."
+                        Text="{Binding Password, Mode=TwoWay}">
                     </Entry>
                 </Grid>
-                <StackLayout Orientation="Horizontal">
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+
+                </ActivityIndicator>
+                <StackLayout Margin="10,0"  Orientation="Horizontal">
                     <Label
                         HorizontalOptions="StartAndExpand"
-                        Text="Rememberme in this device"
+                        Text="Rememberme on this device"
                         VerticalOptions="Center">
                     </Label>
                     <Switch
-                        OnColor="LightGreen"
+                        IsToggled="{Binding IsRemenber, Mode=TwoWay}"
                         HorizontalOptions="End">
                     </Switch>
                 </StackLayout>
-                <ActivityIndicator>
-
-                </ActivityIndicator>
-                <StackLayout Margin="40,0">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Forgot your password?"
+                    TextColor="Blue"
+                    VerticalOptions="CenterAndExpand">
+                    
+                </Label>
+                <StackLayout Margin="40,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
                     <Button
                         BackgroundColor="Navy"
+                        Command="{Binding LoginCommand}"
                         CornerRadius="23"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Login"
                         TextColor="White">
                     </Button>
@@ -66,6 +80,7 @@
                         BackgroundColor="Purple"
                         CornerRadius="23"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Register"
                         TextColor="White">
                     </Button>
