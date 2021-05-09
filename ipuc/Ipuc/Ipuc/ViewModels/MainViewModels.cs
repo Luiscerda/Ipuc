@@ -4,13 +4,27 @@
     {
         #region ViewModels
 
-        public LoginViewModels login { get; set; }
+        public LoginViewModels Login { get; set; }
         #endregion
 
         #region Constructor
         public MainViewModels()
         {
-            this.login = new LoginViewModels();
+            instance = this;
+            this.Login = new LoginViewModels();
+        }
+        #endregion
+
+        #region Singleton
+
+        private static MainViewModels instance;
+        public static MainViewModels GetInstance()
+        {
+            if (instance == null)
+            {
+                return new MainViewModels();
+            }
+            return instance;
         }
         #endregion
     }
