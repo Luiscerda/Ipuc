@@ -1,11 +1,17 @@
 ﻿namespace Ipuc.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using Services;
     using System.Windows.Input;
     using Xamarin.Forms;
 
     public class LoginViewModels : BaseViewModels
     {
+        #region Servicios
+        private ApiService apiService;
+
+        #endregion
+
         #region Atributos
 
         private string email;
@@ -41,6 +47,7 @@
         #region Constructor
         public LoginViewModels()
         {
+            this.apiService = new ApiService();
             this.IsRemembered = true;
             this.IsEnabled = true;
         }
@@ -68,24 +75,52 @@
             }
             this.IsRunning = true;
             this.IsEnabled = false;
-            if (this.Email != "lcerda@unicesar.edu.co" || this.Password != "1234")
+
+            var connection = await this.apiService.CheckConnection();
+
+            if (!connection.IsSuccess)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "Email or password incorrect",
+                    connection.Message,
+                    "Accept");
+                return;
+            }
+
+            var token = await this.apiService.GetToken("https://ipucapi1.azurewebsites.net", this.Email, this.password);
+
+            if (token == null)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Something was wrong, please try later.",
+                    "Accept");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(token.AccessToken))
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    token.ErrorDescription,
                     "Accept");
                 this.Password = string.Empty;
                 return;
             }
+
+            var mainViewModel = MainViewModels.GetInstance();
+            mainViewModel.Token = token;
             this.IsRunning = false;
             this.IsEnabled = true;
-            await Application.Current.MainPage.DisplayAlert(
-                    "OK",
-                    "Fuck yeh",
-                    "Accept");
-            return;
+
+            this.Email = string.Empty;
+            this.Password = string.Empty;
         }
         #endregion
     }

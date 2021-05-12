@@ -1,7 +1,13 @@
 ﻿namespace Ipuc.ViewModels
 {
+    using Models;
+
     public class MainViewModels
     {
+        #region Propiedades
+        public TokenResponse Token { get; set; }
+        #endregion
+
         #region ViewModels
 
         public LoginViewModels Login { get; set; }
