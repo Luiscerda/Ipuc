@@ -4,7 +4,7 @@
     using Services;
     using System.Windows.Input;
     using Xamarin.Forms;
-
+    using Helpers;
     public class LoginViewModels : BaseViewModels
     {
         #region Servicios
@@ -60,9 +60,9 @@
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter an email",
-                    "Accept");
+                    Languages.Error,
+                    Languages.EmailValidator,
+                    Languages.Accept);
                 return;
             }
             if (string.IsNullOrEmpty(this.Password))
