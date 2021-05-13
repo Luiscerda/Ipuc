@@ -1,4 +1,4 @@
-﻿namespace Ipuc.Models
+﻿namespace Domain
 {
     public class Response
     {

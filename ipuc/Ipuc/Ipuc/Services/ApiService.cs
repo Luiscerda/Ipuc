@@ -7,6 +7,7 @@
     using System.Net.Http;
     using System.Text;
     using System.Threading.Tasks;
+    using Domain;
     public class ApiService
     {
         public async Task<Response> CheckConnection()
