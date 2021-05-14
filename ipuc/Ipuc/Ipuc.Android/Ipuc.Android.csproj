@@ -54,6 +54,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
     <PackageReference Include="MvvmLightLibsStd10">
       <Version>5.4.1.1</Version>
     </PackageReference>
@@ -93,12 +96,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ipuc\Ipuc.csproj">
-      <Project>{DD087CC5-F39C-4303-A2B7-3A04B5D66A68}</Project>
-      <Name>Ipuc</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logo_instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ipuc\Ipuc.csproj">
+      <Project>{686d6eeb-79c1-43c0-aed1-c979daedb977}</Project>
+      <Name>Ipuc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -6,11 +6,15 @@
     {
         #region Propiedades
         public TokenResponse Token { get; set; }
+        public string SelectModule { get; set; }
         #endregion
 
         #region ViewModels
 
         public LoginViewModels Login { get; set; }
+        public BiblesViewModel Bibles { get; set; }
+        public BibleViewModel Bible { get; set; }
+        public BookViewModel Book { get; set; }
         #endregion
 
         #region Constructor
@@ -18,6 +22,7 @@
         {
             instance = this;
             this.Login = new LoginViewModels();
+            this.Bibles = new BiblesViewModel();
         }
         #endregion
 

@@ -1,10 +1,12 @@
 ﻿namespace Ipuc.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using Helpers;
     using Services;
     using System.Windows.Input;
+    using Views;
     using Xamarin.Forms;
-    using Helpers;
+
     public class LoginViewModels : BaseViewModels
     {
         #region Servicios
@@ -50,6 +52,8 @@
             this.apiService = new ApiService();
             this.IsRemembered = true;
             this.IsEnabled = true;
+            this.Email = "luiscarlos00231@hotmail.com";
+            this.Password = "ortyzluiscarlos";
         }
         #endregion
         #region Comandos
@@ -116,6 +120,8 @@
 
             var mainViewModel = MainViewModels.GetInstance();
             mainViewModel.Token = token;
+            mainViewModel.Bibles = new BiblesViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new BiblesPage());
             this.IsRunning = false;
             this.IsEnabled = true;
 
