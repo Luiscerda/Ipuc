@@ -3,6 +3,8 @@ namespace Ipuc
 {
     using Views;
     using Xamarin.Forms;
+    using Helpers;
+    using ViewModels;
     public partial class App : Application
     {
         #region Properties
@@ -13,7 +15,19 @@ namespace Ipuc
         public App()
         {
             InitializeComponent();
-           this.MainPage = new NavigationPage(new LoginPage());
+            if (string.IsNullOrEmpty(Settings.Token))
+            {
+                this.MainPage = new NavigationPage(new LoginPage());
+            }
+            else
+            {
+                var mainViewModel = MainViewModels.GetInstance();
+                mainViewModel.Token = Settings.Token;
+                mainViewModel.TokenType = Settings.TokenType;
+                mainViewModel.Bibles = new BiblesViewModel();
+                this.MainPage = new MasterPage();
+            }
+           
         }
         #endregion
 

@@ -6,7 +6,7 @@
              Title="Bibles">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Bibles}" Padding="5">
-            <ListView HasUnevenRows="True" IsRefreshing="{Binding IsRefresing, Mode=TwoWay}" ItemsSource="{Binding Bibles}">
+            <ListView HasUnevenRows="True" IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}" ItemsSource="{Binding Bibles}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

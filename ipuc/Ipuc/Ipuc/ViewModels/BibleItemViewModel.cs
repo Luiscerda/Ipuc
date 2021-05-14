@@ -23,7 +23,7 @@
             var mainViewModel = MainViewModels.GetInstance();
             mainViewModel.Bible = new BibleViewModel(this);
             mainViewModel.SelectModule = Module;
-            await Application.Current.MainPage.Navigation.PushAsync(new BiblePage());
+            await App.Navigator.PushAsync(new BiblePage());
         }
         #endregion
     }

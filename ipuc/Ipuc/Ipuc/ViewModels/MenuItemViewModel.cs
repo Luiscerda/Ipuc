@@ -1,6 +1,7 @@
 ﻿namespace Ipuc.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using Ipuc.Helpers;
     using System.Windows.Input;
     using Views;
     using Xamarin.Forms;
@@ -28,6 +29,11 @@
         {
             if (this.PageName == "LoginPage")
             {
+                Settings.Token = string.Empty;
+                Settings.TokenType = string.Empty;
+                var mainViewModel = MainViewModels.GetInstance();
+                mainViewModel.Token = string.Empty;
+                mainViewModel.TokenType = string.Empty;
                 Application.Current.MainPage = new LoginPage();
             }
         }

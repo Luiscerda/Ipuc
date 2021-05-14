@@ -52,8 +52,6 @@
             this.apiService = new ApiService();
             this.IsRemembered = true;
             this.IsEnabled = true;
-            this.Email = "luiscarlos00231@hotmail.com";
-            this.Password = "ortyzluiscarlos";
         }
         #endregion
         #region Comandos
@@ -119,10 +117,17 @@
             }
 
             var mainViewModel = MainViewModels.GetInstance();
-            mainViewModel.Token = token;
+            mainViewModel.Token = token.AccessToken;
+            mainViewModel.TokenType = token.TokenType;
+            if (this.IsRemembered)
+            {
+                Settings.Token = token.AccessToken;
+                Settings.TokenType = token.TokenType;
+            }            
+
             mainViewModel.Bibles = new BiblesViewModel();
             Application.Current.MainPage = new MasterPage();
-            //await Application.Current.MainPage.Navigation.PushAsync(new BiblesPage());
+
             this.IsRunning = false;
             this.IsEnabled = true;
 

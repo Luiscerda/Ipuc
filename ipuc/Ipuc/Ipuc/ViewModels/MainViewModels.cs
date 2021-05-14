@@ -7,7 +7,8 @@
     public class MainViewModels
     {
         #region Propiedades
-        public TokenResponse Token { get; set; }
+        public string Token { get; set; }
+        public string TokenType { get; set; }
         public string SelectModule { get; set; }
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
         #endregion
