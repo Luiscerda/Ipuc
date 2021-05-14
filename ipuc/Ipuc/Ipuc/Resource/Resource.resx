@@ -129,6 +129,15 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>LogOut</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>MyProfile</value>
+  </data>
+  <data name="RegisterMembers" xml:space="preserve">
+    <value>Register Members</value>
+  </data>
   <data name="Rememberme" xml:space="preserve">
     <value>Rememberme in this device</value>
   </data>

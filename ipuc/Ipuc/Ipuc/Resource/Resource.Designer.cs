@@ -97,6 +97,33 @@ namespace Ipuc.Resource {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a LogOut.
+        /// </summary>
+        public static string LogOut {
+            get {
+                return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MyProfile.
+        /// </summary>
+        public static string MyProfile {
+            get {
+                return ResourceManager.GetString("MyProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Register Members.
+        /// </summary>
+        public static string RegisterMembers {
+            get {
+                return ResourceManager.GetString("RegisterMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Rememberme in this device.
         /// </summary>
         public static string Rememberme {

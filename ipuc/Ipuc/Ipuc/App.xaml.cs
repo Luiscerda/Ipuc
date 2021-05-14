@@ -5,16 +5,19 @@ namespace Ipuc
     using Xamarin.Forms;
     public partial class App : Application
     {
-        #region Constructor
+        #region Properties
+        public static NavigationPage Navigator { get; internal set; } 
+        #endregion
+
+        #region Constructors
         public App()
         {
             InitializeComponent();
-
-            this.MainPage = new NavigationPage(new LoginPage());
+           this.MainPage = new NavigationPage(new LoginPage());
         }
         #endregion
 
-        #region Metodos
+        #region Methods
         protected override void OnStart()
         {
         }
