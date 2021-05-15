@@ -19,6 +19,7 @@
         public BiblesViewModel Bibles { get; set; }
         public BibleViewModel Bible { get; set; }
         public BookViewModel Book { get; set; }
+        public RegisterViewModel Register { get; set; }
         #endregion
 
         #region Constructor

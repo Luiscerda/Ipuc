@@ -3,6 +3,7 @@
     using GalaSoft.MvvmLight.Command;
     using Helpers;
     using Services;
+    using System;
     using System.Windows.Input;
     using Views;
     using Xamarin.Forms;
@@ -56,6 +57,13 @@
         #endregion
         #region Comandos
         public ICommand LoginCommand { get {return  new RelayCommand(Login); } }
+        public ICommand RegisterCommand { get { return new RelayCommand(Register); } }
+
+        private async void Register()
+        {
+            MainViewModels.GetInstance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
+        }
 
         private async void Login()
         {
