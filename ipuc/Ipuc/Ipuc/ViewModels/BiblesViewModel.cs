@@ -6,6 +6,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Collections.ObjectModel;
+    using System.Windows.Input;
+    using GalaSoft.MvvmLight.Command;
 
     public class BiblesViewModel : BaseViewModels
     {
@@ -17,6 +19,7 @@
         private BibleResponse bibleResponse;
         private ObservableCollection<BibleItemViewModel> bibles;
         private bool isRefreshing;
+        private string filter;
         #endregion
 
         #region Properties
@@ -30,6 +33,15 @@
         {
             get { return this.isRefreshing; }
             set { SetValue(ref this.isRefreshing, value); }
+        }
+
+        public string Filter
+        {
+            get { return this.filter; }
+            set { 
+                SetValue(ref this.filter, value);
+                this.Search();
+            }
         }
         #endregion
 
@@ -90,6 +102,39 @@
                 Year = b.Value.Year,
 
             });
+        }
+        #endregion
+
+        #region Commands
+
+        public ICommand SearchCommand
+        {
+            get
+            {
+                return new RelayCommand(Search);
+            }
+        }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new RelayCommand(LoadBibles);
+            }
+        }
+
+        private void Search()
+        {
+            if (string.IsNullOrEmpty(this.Filter))
+            {
+                this.Bibles = new ObservableCollection<BibleItemViewModel>(this.ToBibleItemViewModel());
+            }
+            else
+            {
+                this.Bibles = new ObservableCollection<BibleItemViewModel>(
+                    this.ToBibleItemViewModel().Where(
+                        l => l.Name.ToLower().Contains(this.Filter.ToLower())));
+            }
         }
         #endregion
     }

@@ -3,46 +3,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ipuc.Views.BiblesPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Bibles">
+             Title="Bibles"
+             BackgroundColor="Silver">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Bibles}" Padding="5">
-            <ListView HasUnevenRows="True" IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}" ItemsSource="{Binding Bibles}">
+            <SearchBar
+                BackgroundColor="Silver"
+                HeightRequest="46"
+                Text="{Binding Filter, Mode=TwoWay}"
+                SearchCommand="{Binding SearchCommand}">
+            </SearchBar>
+            <ListView HasUnevenRows="True" SeparatorVisibility="None" RefreshCommand="{Binding RefreshCommand}" BackgroundColor="Silver" IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}" ItemsSource="{Binding Bibles}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
-                                <Grid.GestureRecognizers>
+                            <Frame CornerRadius="20" HasShadow="True" Margin="5">
+                                <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding SelectBibleCommand}"/>
-                                </Grid.GestureRecognizers>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0">
-                                    <Label
+                                </Frame.GestureRecognizers>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0">
+                                        <Label
                                         FontAttributes="Bold"
                                         FontSize="Medium"
                                         Text="{Binding Name}"
                                         TextColor="Black">
-                                    </Label>
-                                    <Label
+                                        </Label>
+                                        <Label
                                         Text="{Binding Module}"
                                         TextColor="Black">
-                                    </Label>
-                                </StackLayout>
-                                <StackLayout Grid.Column="1">
-                                    <Label
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1">
+                                        <Label
                                         HorizontalOptions="End"
                                         Text="{Binding Lang}"
                                         TextColor="Black">
-                                    </Label>
-                                    <Label
+                                        </Label>
+                                        <Label
                                         HorizontalOptions="End"
                                         Text="{Binding Year}"
                                         TextColor="Black">
-                                    </Label>
-                                </StackLayout>
-                            </Grid>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
