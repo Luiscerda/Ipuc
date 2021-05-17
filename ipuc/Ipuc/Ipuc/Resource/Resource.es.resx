@@ -138,6 +138,9 @@
   <data name="ConfirmValidation2" xml:space="preserve">
     <value>La contraseña y la confirmación no concuerdan.</value>
   </data>
+  <data name="EMail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
   <data name="EmailPlaceHolder" xml:space="preserve">
     <value>Ingresa tu email...</value>
   </data>
@@ -182,6 +185,15 @@
   </data>
   <data name="MyProfile" xml:space="preserve">
     <value>Mi perfil</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Ingresa tu contraseña...</value>
+  </data>
+  <data name="PasswordValidation" xml:space="preserve">
+    <value>Debes ingresar una contraseña.</value>
   </data>
   <data name="PasswordValidation2" xml:space="preserve">
     <value>La contraseña debe tener al menos sies (6) carácteres.</value>

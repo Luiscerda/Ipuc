@@ -126,6 +126,9 @@
     <PackageReference Include="MvvmLightLibsStd10">
       <Version>5.4.1.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugin.Connectivity">
       <Version>4.0.0.190-beta</Version>
     </PackageReference>
@@ -147,5 +150,8 @@
       <Project>{DD087CC5-F39C-4303-A2B7-3A04B5D66A68}</Project>
       <Name>Ipuc</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\no_image.png" />
   </ItemGroup>
 </Project>

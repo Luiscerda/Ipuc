@@ -68,8 +68,9 @@
                 return;
             }
 
+            var apiSecurity = Application.Current.Resources["APIBibles"].ToString();
             var response = await this.apiService.Get<BookResponse>(
-                "https://api.biblesupersearch.com",
+                apiSecurity,
                 "/api",
                 string.Format("/books?language={0}",bible.LangShort));
             if (!response.IsSuccess)
@@ -86,7 +87,7 @@
             if (bible.LangShort != "en")
             {
                 var response2 = await this.apiService.Get<BookResponse>(
-                    "https://api.biblesupersearch.com",
+                    apiSecurity,
                     "/api",
                     "/books?language=en");
 

@@ -68,7 +68,8 @@
                     "Accept");
                 return;
             }
-            var response = await this.apiService.Get<BibleResponse>("https://api.biblesupersearch.com", "/api", "/bibles");
+            var apiBibles = Application.Current.Resources["APIBibles"].ToString();
+            var response = await this.apiService.Get<BibleResponse>(apiBibles, "/api", "/bibles");
 
             if (!response.IsSuccess)
             {

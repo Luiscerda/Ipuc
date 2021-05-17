@@ -66,9 +66,9 @@
                     "Accept");
                 return;
             }
-
+            var apiSecurity = Application.Current.Resources["APIBibles"].ToString();
             var response = await this.apiService.Get<ContentResponse>(
-                "https://api.biblesupersearch.com",
+                apiSecurity,
                 "/api",
                 string.Format("?bible={0}&reference={1}",
                 MainViewModels.GetInstance().SelectModule,

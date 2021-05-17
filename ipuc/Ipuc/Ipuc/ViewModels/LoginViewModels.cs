@@ -98,8 +98,8 @@
                     "Accept");
                 return;
             }
-
-            var token = await this.apiService.GetToken("https://ipucapi1.azurewebsites.net", this.Email, this.password);
+            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
+            var token = await this.apiService.GetToken(apiSecurity, this.Email, this.password);
 
             if (token == null)
             {

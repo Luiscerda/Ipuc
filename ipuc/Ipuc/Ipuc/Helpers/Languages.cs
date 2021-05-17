@@ -161,5 +161,17 @@
         {
             get { return Resource.FromCamera; }
         }
+        public static string EMail
+        {
+            get { return Resource.EMail; }
+        }
+        public static string Password
+        {
+            get { return Resource.Password; }
+        }
+        public static string PasswordPlaceHolder
+        {
+            get { return Resource.PasswordPlaceHolder; }
+        }
     }
 }

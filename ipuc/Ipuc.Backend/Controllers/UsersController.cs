@@ -34,7 +34,7 @@
             return View(user);
         }
 
-        // GET: Users/Create
+        //GET: Users/Create
         //public ActionResult Create()
         //{
         //    return View();
@@ -57,20 +57,20 @@
         //    return View(view);
         //}
 
-        private User ToUser(UserView view)
-        {
-            return new User
-            {
-                Email = view.Email,
-                FirstName = view.FirstName,
-                ImagePath = view.ImagePath,
-                LastName = view.LastName,
-                Telephone = view.Telephone,
-                UserId = view.UserId,
-            };
-        }
+        //private User ToUser(UserView view)
+        //{
+        //    return new User
+        //    {
+        //        Email = view.Email,
+        //        FirstName = view.FirstName,
+        //        ImagePath = view.ImagePath,
+        //        LastName = view.LastName,
+        //        Telephone = view.Telephone,
+        //        UserId = view.UserId,
+        //    };
+        //}
 
-        // GET: Users/Edit/5
+        ////GET: Users/Edit/5
         //public async Task<ActionResult> Edit(int? id)
         //{
         //    if (id == null)
@@ -85,9 +85,9 @@
         //    return View(user);
         //}
 
-        // POST: Users/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        ////POST: Users/Edit/5
+        // //Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse.Para obtener
+        // //más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public async Task<ActionResult> Edit([Bind(Include = "UserId,FirstName,LastName,Email,Telephone,ImagePath")] User user)

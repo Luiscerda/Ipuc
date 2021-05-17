@@ -124,6 +124,15 @@ namespace Ipuc.Resource {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a E-Mail.
+        /// </summary>
+        public static string EMail {
+            get {
+                return ResourceManager.GetString("EMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enter your email....
         /// </summary>
         public static string EmailPlaceHolder {
@@ -255,6 +264,33 @@ namespace Ipuc.Resource {
         public static string MyProfile {
             get {
                 return ResourceManager.GetString("MyProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter your password....
+        /// </summary>
+        public static string PasswordPlaceHolder {
+            get {
+                return ResourceManager.GetString("PasswordPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You must enter a password..
+        /// </summary>
+        public static string PasswordValidation {
+            get {
+                return ResourceManager.GetString("PasswordValidation", resourceCulture);
             }
         }
         
