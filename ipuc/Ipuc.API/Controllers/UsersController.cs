@@ -24,9 +24,9 @@
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> GetUser(int id)
+        public async Task<IHttpActionResult> GetUser(string email)
         {
-            User user = await db.Users.FindAsync(id);
+            var user = await db.Users.Where(p => p.Email.ToLower() == email.ToLower()).FirstOrDefaultAsync();
             if (user == null)
             {
                 return NotFound();
