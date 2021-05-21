@@ -173,7 +173,7 @@
             {
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    Languages.PhoneValidation,
+                    Languages.PasswordValidation2,
                     Languages.Accept);
                 return;
             }

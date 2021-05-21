@@ -39,7 +39,6 @@
                         VerticalOptions="Center">
                     </Label>
                     <Entry
-                        BackgroundColor="White"
                         Grid.Column="1"
                         Grid.Row="0"
                         Placeholder="{i18n:Translate FirstNamePlaceHolder}"
@@ -70,7 +69,6 @@
                         VerticalOptions="Center">
                     </Label>
                     <Entry
-                        BackgroundColor="White"
                         Grid.Column="1"
                         Grid.Row="2"
                         Placeholder="{i18n:Translate EmailPlaceHolder}"
@@ -85,7 +83,6 @@
                         VerticalOptions="Center">
                     </Label>
                     <Entry
-                        BackgroundColor="White"
                         Grid.Column="1"
                         Grid.Row="3"
                         Placeholder="{i18n:Translate PhonePlaceHolder}"
@@ -100,7 +97,6 @@
                         VerticalOptions="Center">
                     </Label>
                     <Entry
-                        BackgroundColor="White"
                         Grid.Column="1"
                         Grid.Row="4"
                         Placeholder="{i18n:Translate PasswordPlaceHolder}"
@@ -115,7 +111,6 @@
                         VerticalOptions="Center">
                     </Label>
                     <Entry
-                        BackgroundColor="White"
                         Grid.Column="1"
                         Grid.Row="5"
                         Placeholder="{i18n:Translate ConfirmPlaceHolder}"

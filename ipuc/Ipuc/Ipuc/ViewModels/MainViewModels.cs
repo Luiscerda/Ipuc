@@ -1,5 +1,6 @@
 ﻿namespace Ipuc.ViewModels
 {
+    using Domain;
     using Helpers;
     using Models;
     using System.Collections.ObjectModel;
@@ -11,6 +12,7 @@
         public string TokenType { get; set; }
         public string SelectModule { get; set; }
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+        public User User { get; set; }
         #endregion
 
         #region ViewModels

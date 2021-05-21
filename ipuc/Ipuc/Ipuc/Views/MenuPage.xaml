@@ -12,6 +12,13 @@
                 Source="logo"
                 WidthRequest="200">
             </Image>
+            <Label
+                FontSize="Large"
+                FontAttributes="Bold"
+                Text="{Binding User.FullName}"
+                TextColor="White">
+                
+            </Label>
             <ListView HasUnevenRows="True" ItemsSource="{Binding Menus}" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>

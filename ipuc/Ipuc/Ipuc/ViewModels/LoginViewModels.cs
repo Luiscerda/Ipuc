@@ -124,9 +124,17 @@
                 return;
             }
 
+            var user = await this.apiService.GetUserByEmail(
+                apiSecurity,
+                "/api",
+                "/Users/GetUserByEmail",
+                this.Email);
+
             var mainViewModel = MainViewModels.GetInstance();
             mainViewModel.Token = token.AccessToken;
             mainViewModel.TokenType = token.TokenType;
+            mainViewModel.User = user;
+
             if (this.IsRemembered)
             {
                 Settings.Token = token.AccessToken;
