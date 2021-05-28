@@ -12,7 +12,7 @@
     {
         #region Servicios
         private ApiService apiService;
-
+        private DataService dataService;
         #endregion
 
         #region Atributos
@@ -22,6 +22,7 @@
         private bool isRunning;
         private bool isEnabled;
         #endregion
+
         #region Propiedades
         public string Email
         {
@@ -51,6 +52,7 @@
         public LoginViewModels()
         {
             this.apiService = new ApiService();
+            this.dataService = new DataService();
             this.IsRemembered = true;
             this.IsEnabled = true;
         }
@@ -130,15 +132,18 @@
                 "/Users/GetUserByEmail",
                 this.Email);
 
+            var userLocal = Converter.ToUserLocal(user);
+
             var mainViewModel = MainViewModels.GetInstance();
             mainViewModel.Token = token.AccessToken;
             mainViewModel.TokenType = token.TokenType;
-            mainViewModel.User = user;
+            mainViewModel.User = userLocal;
 
             if (this.IsRemembered)
             {
                 Settings.Token = token.AccessToken;
                 Settings.TokenType = token.TokenType;
+                this.dataService.DeleteAllAndInsert(userLocal);
             }            
 
             mainViewModel.Bibles = new BiblesViewModel();

@@ -2,19 +2,22 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     x:Class="Ipuc.Views.MenuPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     BackgroundColor="Navy"
     Title="Menu">
     <ContentPage.Content>
         <StackLayout Padding="5,20,5,5">
-            <Image 
-                Source="logo"
-                WidthRequest="200">
-            </Image>
+            <controls:CircleImage
+                    Aspect="AspectFit"
+                    HeightRequest="150"
+                    Source="{Binding User.ImageFullPath}">
+            </controls:CircleImage>
             <Label
                 FontSize="Large"
                 FontAttributes="Bold"
+                HorizontalOptions="Center"
                 Text="{Binding User.FullName}"
                 TextColor="White">
                 

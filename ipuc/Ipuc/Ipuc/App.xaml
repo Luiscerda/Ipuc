@@ -8,7 +8,7 @@
             <infra:InstanceLocator x:Key="Locator"/>
 
             <x:String x:Key="APIBibles">https://api.biblesupersearch.com</x:String>
-            <x:String x:Key="APISecurity">https://ipucapi21.azurewebsites.net</x:String>
+            <x:String x:Key="APISecurity">https://ipucapi2.azurewebsites.net</x:String>
             <!--<x:String x:Key="APISecurity">https://ipucapi1.azurewebsites.net</x:String>-->
         </ResourceDictionary>
     </Application.Resources>

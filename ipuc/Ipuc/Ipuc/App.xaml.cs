@@ -5,6 +5,9 @@ namespace Ipuc
     using Xamarin.Forms;
     using Helpers;
     using ViewModels;
+    using Ipuc.Services;
+    using Models;
+
     public partial class App : Application
     {
         #region Properties
@@ -21,9 +24,12 @@ namespace Ipuc
             }
             else
             {
+                var dataService = new DataService();
+                var user = dataService.First();
                 var mainViewModel = MainViewModels.GetInstance();
                 mainViewModel.Token = Settings.Token;
                 mainViewModel.TokenType = Settings.TokenType;
+                mainViewModel.User = user;
                 mainViewModel.Bibles = new BiblesViewModel();
                 this.MainPage = new MasterPage();
             }
