@@ -54,30 +54,34 @@ namespace Ipuc.Services
                 return model;
             }
         }
-        //public T InsertOrUpdate<T>(T model) where T : class
-        //{
-        //    try
-        //    {
-        //        using (var da = new DataAccess())
-        //        {
-        //            var oldRecord = da.Find(model.GetHashCode());
-        //            if (oldRecord != null)
-        //            {
-        //                da.Update(model);
-        //            }
-        //            else
-        //            {
-        //                da.Insert(model);
-        //            }
-        //            return model;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ex.ToString();
-        //        return model;
-        //    }
-        //}
+        public T InsertOrUpdate<T>(T model) where T : class
+        {
+            try
+            {
+                using (var da = new DataAccess())
+                {
+                    var oldRecord = da.GetList();
+                    foreach (var item in oldRecord)
+                    {
+                        da.Update(model);
+                    }
+                    //if (oldRecord != null)
+                    //{
+                    //    da.Update(model);
+                    //}
+                    //else
+                    //{
+                    //    da.Insert(model);
+                    //}
+                    return model;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                return model;
+            }
+        }
         //public T Insert<T>(T model)
         //{
         //    using (var da = new DataAccess())
@@ -107,13 +111,13 @@ namespace Ipuc.Services
         //        return da.GetList().ToList();
         //    }
         //}
-        //public void Update<T>(T model)
-        //{
-        //    using (var da = new DataAccess())
-        //    {
-        //        da.Update(model);
-        //    }
-        //}
+        public void Update<T>(T model) where T : class
+        {
+            using (var da = new DataAccess())
+            {
+                da.Update(model);
+            }
+        }
         //public void Delete<T>(T model)
         //{
         //    using (var da = new DataAccess())

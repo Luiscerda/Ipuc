@@ -8,6 +8,8 @@
     using System.Text;
     using System.Threading.Tasks;
     using Domain;
+    using System.Net.Http.Headers;
+
     public class ApiService
     {
         public async Task<Response> CheckConnection()
@@ -131,8 +133,7 @@
                 };
             }
         }
-
-        public async Task<User> GetUserByEmail(string urlBase, string servicePrefix, string controller,string email)
+        public async Task<User> GetUserByEmail(string urlBase, string servicePrefix, string controller, string tokenType, string accessToken, string email)
         {
             try
             {
@@ -145,6 +146,7 @@
                 var request = JsonConvert.SerializeObject(model);
                 var content = new StringContent(request, Encoding.UTF8, "application/json");
                 var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(tokenType, accessToken);
                 client.BaseAddress = new Uri(urlBase);
                 var url = string.Format("{0}{1}", servicePrefix, controller);
                 var response = await client.PostAsync(url, content);
@@ -154,11 +156,52 @@
                     return null;
                 }
                 var result = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<User>(result);              
+                return  JsonConvert.DeserializeObject<User>(result);              
             }
             catch
             {
                 return null;
+            }
+        }
+        public async Task<Response> Put<T>(string urlBase, string servicePrefix, string controller, string tokenType, string accessToken, T model)
+        {
+            try
+            {
+                var request = JsonConvert.SerializeObject(model);
+                var content = new StringContent(request, Encoding.UTF8, "application/json");
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(tokenType, accessToken);
+                client.BaseAddress = new Uri(urlBase);
+                var url = string.Format(
+                    "{0}{1}/{2}",
+                    servicePrefix,
+                    controller,
+                    model.GetHashCode());
+                var response = await client.PutAsync(url, content);
+                var result = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var error = JsonConvert.DeserializeObject<Response>(result);
+                    error.IsSuccess = false;
+                    return error;
+                }
+
+                var newRecord = JsonConvert.DeserializeObject<T>(result);
+
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = newRecord,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
             }
         }
     }

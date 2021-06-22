@@ -5,14 +5,22 @@
     using Models;
     using System.Collections.ObjectModel;
 
-    public class MainViewModels
+    public class MainViewModels : BaseViewModels
     {
+        #region Attributes
+        private UserLocal user;
+        #endregion
+
         #region Propiedades
         public string Token { get; set; }
         public string TokenType { get; set; }
         public string SelectModule { get; set; }
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
-        public UserLocal User { get; set; }
+        public UserLocal User 
+        {
+            get { return this.user; }
+            set { SetValue(ref this.user, value); }
+        }
         #endregion
 
         #region ViewModels
@@ -22,6 +30,7 @@
         public BibleViewModel Bible { get; set; }
         public BookViewModel Book { get; set; }
         public RegisterViewModel Register { get; set; }
+        public MyProfileViewModel MyProfile { get; set; }
         #endregion
 
         #region Constructor

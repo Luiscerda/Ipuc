@@ -19,34 +19,35 @@ namespace Ipuc.Helpers
 
     public class DataAccess : IDisposable
     {
-        private static SQLiteConnection connection;
+        private SQLiteConnection connection;
         public DataAccess()
         {
-            GetConnection();
-
+            var config = DependencyService.Get<IConfig>();
+            this.connection = new SQLiteConnection(Path.Combine(config.DirectoryDB, "Ipuc.db3"));
+            connection.CreateTable<UserLocal>();
         }
-        public static SQLiteConnection GetConnection()
-        {
-            if (connection == null)
-            {
-                var config = DependencyService.Get<IConfig>();
-                connection = new SQLiteConnection(Path.Combine(config.DirectoryDB, "Ipuc.db3"));
-                connection.CreateTable<UserLocal>();
-            }
-            return connection;
-        }
+        //public static SQLiteConnection GetConnection()
+        //{
+        //    if (connection == null)
+        //    {
+        //        var config = DependencyService.Get<IConfig>();
+        //        this.connection = new SQLiteConnection(Path.Combine(config.DirectoryDB, "Ipuc.db3"));
+        //        connection.CreateTable<UserLocal>();
+        //    }
+        //    return connection;
+        //}
 
         public void Insert<T>(T model)
         {
-            connection.Insert(model);
+            this.connection.Insert(model);
         }
-        //public void Update<T>(T model)
-        //{
-        //    connection.Update(model);
-        //}
+        public void Update<T>(T model)
+        {
+            this.connection.Update(model);
+        }
         public void Delete<T>(T model)
         {
-            connection.Delete(model);
+            this.connection.Delete(model);
         }
         //public UserLocal First()
         //{
@@ -54,13 +55,13 @@ namespace Ipuc.Helpers
         //}
         public List<UserLocal> GetList()
         {
-            return connection.Table<UserLocal>().ToList();
+            return this.connection.Table<UserLocal>().ToList();
         }
 
-        //public UserLocal Find(int pk)
-        //{
-        //    return connection.Table<UserLocal>().FirstOrDefault(m => m.GetHashCode() == pk);
-        //}
+        public UserLocal Find(int pk)
+        {
+            return connection.Table<UserLocal>().FirstOrDefault(m => m.UserId == pk);
+        }
 
         public void Dispose()
         {

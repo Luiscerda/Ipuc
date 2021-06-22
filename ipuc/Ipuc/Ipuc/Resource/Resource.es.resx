@@ -123,8 +123,14 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="ChagePasswordConfirm" xml:space="preserve">
+    <value>La contraseña fue cambiada exitosamente.</value>
+  </data>
   <data name="ChangeImage" xml:space="preserve">
     <value>Toca la imagen para cambiarla.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
   </data>
   <data name="ConfirmLabel" xml:space="preserve">
     <value>Confirmación</value>
@@ -137,6 +143,18 @@
   </data>
   <data name="ConfirmValidation2" xml:space="preserve">
     <value>La contraseña y la confirmación no concuerdan.</value>
+  </data>
+  <data name="ConnectionError1" xml:space="preserve">
+    <value>Verifica que tengas los parámetros de internet activados.</value>
+  </data>
+  <data name="ConnectionError2" xml:space="preserve">
+    <value>Verifica que tengas conexión a internet.</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña actual</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Ingrese su contraseña actual...</value>
   </data>
   <data name="EMail" xml:space="preserve">
     <value>E-Mail</value>
@@ -152,6 +170,9 @@
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="ErrorChangingPassword" xml:space="preserve">
+    <value>La contraseña no pudo ser cambiada, por favor intenta más tarde.</value>
   </data>
   <data name="FirstNameLabel" xml:space="preserve">
     <value>Nombres</value>
@@ -180,14 +201,26 @@
   <data name="Login" xml:space="preserve">
     <value>Iniciar Sesión</value>
   </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Email o contraseña incorrectos.</value>
+  </data>
   <data name="LogOut" xml:space="preserve">
     <value>Cerrar Sesión</value>
   </data>
   <data name="MyProfile" xml:space="preserve">
     <value>Mi perfil</value>
   </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Contraseña nueva</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Ingrese la nueva contraseña...</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Contraseña</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>La contraseña actual es incorrecta</value>
   </data>
   <data name="PasswordPlaceHolder" xml:space="preserve">
     <value>Ingresa tu contraseña...</value>
@@ -218,6 +251,9 @@
   </data>
   <data name="Rememberme" xml:space="preserve">
     <value>Recordarme en este dispositivo</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
   </data>
   <data name="SourceImageQuestion" xml:space="preserve">
     <value>¿De donde quieres tomar la imagen?</value>
