@@ -51,7 +51,7 @@
                 {
                     return "noimage";
                 }
-                return string.Format("https://ipucapi22.azurewebsites.net/{0}", ImagePath.Substring(1));
+                return string.Format("https://ipucapi23.azurewebsites.net/{0}", ImagePath.Substring(1));
             }
         }
 

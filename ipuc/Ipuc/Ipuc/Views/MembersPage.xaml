@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ipuc.Views.MembersPage"
+              xmlns:i18n="clr-namespace:Ipuc.Helpers"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="Silver"
+             Title="{i18n:Translate ListMembers}">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding MembersList}" Padding="5">
+            <SearchBar
+                BackgroundColor="Silver"
+                HeightRequest="46"
+                Text="{Binding Filter, Mode=TwoWay}"
+                SearchCommand="{Binding SearchCommand}">
+            </SearchBar>
+            <ListView HasUnevenRows="True" SeparatorVisibility="None" RefreshCommand="{Binding RefreshCommand}" BackgroundColor="Silver" IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}" ItemsSource="{Binding Members}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="20" HasShadow="True" Margin="5">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectMemberCommand}"/>
+                                </Frame.GestureRecognizers>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0">
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="Medium"
+                                            Text="{Binding Identificacion}"
+                                            TextColor="Black">
+
+                                        </Label>
+                                        <Label
+                                            Text="{Binding FullName}"
+                                            TextColor="Black">
+
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1">
+                                        <Label
+                                            FontAttributes="Bold"
+                                            Text="{i18n:Translate BaptizedLabel}"
+                                            TextColor="Black">
+
+                                        </Label>
+                                        <Label
+                                            Text="{Binding IsBautizado}"
+                                            TextColor="Black">
+
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

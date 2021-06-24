@@ -232,5 +232,74 @@
         {
             get { return Resource.ErrorChangingPassword; }
         }
+        public static string TitleMembers
+        {
+            get { return Resource.TitleMembers; }
+        }
+
+        public static string IdentificationMembers
+        {
+            get { return Resource.IdentificationMembers; }
+        }
+        public static string IdentificacionMembersPlaceHolder
+        {
+            get { return Resource.IdentificacionMembersPlaceHolder; }
+        }
+
+        public static string NameMembers
+        {
+            get { return Resource.NameMembers; }
+        }
+        public static string NameMembersPlaceholder
+        {
+            get { return Resource.NameMembersPlaceholder; }
+        }
+
+        public static string LastNameMembers
+        {
+            get { return Resource.LastNameMembers; }
+        }
+        public static string LastNameMembersPlaceHolder
+        {
+            get { return Resource.LastNameMembersPlaceHolder; }
+        }
+
+        public static string DirectionLabel
+        {
+            get { return Resource.DirectionLabel; }
+        }
+        public static string DirectionPlaceHolder
+        {
+            get { return Resource.DirectionPlaceHolder; }
+        }
+
+        public static string BaptizedLabel
+        {
+            get { return Resource.BaptizedLabel; }
+        }
+        public static string IdentificacionValidation
+        {
+            get { return Resource.IdentificacionValidation; }
+        }
+        public static string MembersRegisterMessage
+        {
+            get { return Resource.MembersRegisterMessage; }
+        }
+        public static string AddressValidation
+        {
+            get { return Resource.AddressValidation; }
+        }
+        public static string ListMembers
+        {
+            get { return Resource.ListMembers; }
+        }
+        public static string InformationMember
+        {
+            get { return Resource.InformationMember; }
+        }
+        public static string Update
+        {
+            get { return Resource.Update; }
+        }
     }
 }

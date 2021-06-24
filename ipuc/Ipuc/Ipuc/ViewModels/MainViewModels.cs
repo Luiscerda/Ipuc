@@ -31,6 +31,9 @@
         public BookViewModel Book { get; set; }
         public RegisterViewModel Register { get; set; }
         public MyProfileViewModel MyProfile { get; set; }
+        public RegisterMembersViewModels Members { get; set; }
+        public MembersViewModels MembersList { get; set; }
+        public MemberViewModels Member { get; set; }
         #endregion
 
         #region Constructor
@@ -71,6 +74,12 @@
                 Icon = "ic_account_child",
                 PageName = "RegisterMembersPage",
                 Title = Languages.RegisterMembers
+            });
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_format_list_bulleted",
+                PageName = "ListMembersPage",
+                Title = Languages.ListMembers
             });
             this.Menus.Add(new MenuItemViewModel
             {

@@ -70,6 +70,24 @@ namespace Ipuc.Resource {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You must enter an address.
+        /// </summary>
+        public static string AddressValidation {
+            get {
+                return ResourceManager.GetString("AddressValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Baptized.
+        /// </summary>
+        public static string BaptizedLabel {
+            get {
+                return ResourceManager.GetString("BaptizedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel.
         /// </summary>
         public static string Cancel {
@@ -178,6 +196,24 @@ namespace Ipuc.Resource {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Address.
+        /// </summary>
+        public static string DirectionLabel {
+            get {
+                return ResourceManager.GetString("DirectionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter your address.
+        /// </summary>
+        public static string DirectionPlaceHolder {
+            get {
+                return ResourceManager.GetString("DirectionPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a E-Mail.
         /// </summary>
         public static string EMail {
@@ -277,11 +313,65 @@ namespace Ipuc.Resource {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enter your ID.
+        /// </summary>
+        public static string IdentificacionMembersPlaceHolder {
+            get {
+                return ResourceManager.GetString("IdentificacionMembersPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You must enter an ID.
+        /// </summary>
+        public static string IdentificacionValidation {
+            get {
+                return ResourceManager.GetString("IdentificacionValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ID.
+        /// </summary>
+        public static string IdentificationMembers {
+            get {
+                return ResourceManager.GetString("IdentificationMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Information.
+        /// </summary>
+        public static string InformationMember {
+            get {
+                return ResourceManager.GetString("InformationMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Last Name.
         /// </summary>
         public static string LastNameLabel {
             get {
                 return ResourceManager.GetString("LastNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Last name.
+        /// </summary>
+        public static string LastNameMembers {
+            get {
+                return ResourceManager.GetString("LastNameMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter your last name.
+        /// </summary>
+        public static string LastNameMembersPlaceHolder {
+            get {
+                return ResourceManager.GetString("LastNameMembersPlaceHolder", resourceCulture);
             }
         }
         
@@ -300,6 +390,15 @@ namespace Ipuc.Resource {
         public static string LastNameValidation {
             get {
                 return ResourceManager.GetString("LastNameValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Members.
+        /// </summary>
+        public static string ListMembers {
+            get {
+                return ResourceManager.GetString("ListMembers", resourceCulture);
             }
         }
         
@@ -331,11 +430,38 @@ namespace Ipuc.Resource {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Member has successfully registered.
+        /// </summary>
+        public static string MembersRegisterMessage {
+            get {
+                return ResourceManager.GetString("MembersRegisterMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a MyProfile.
         /// </summary>
         public static string MyProfile {
             get {
                 return ResourceManager.GetString("MyProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Name.
+        /// </summary>
+        public static string NameMembers {
+            get {
+                return ResourceManager.GetString("NameMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter your name.
+        /// </summary>
+        public static string NameMembersPlaceholder {
+            get {
+                return ResourceManager.GetString("NameMembersPlaceholder", resourceCulture);
             }
         }
         
@@ -480,6 +606,24 @@ namespace Ipuc.Resource {
         public static string SourceImageQuestion {
             get {
                 return ResourceManager.GetString("SourceImageQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Member registration.
+        /// </summary>
+        public static string TitleMembers {
+            get {
+                return ResourceManager.GetString("TitleMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update.
+        /// </summary>
+        public static string Update {
+            get {
+                return ResourceManager.GetString("Update", resourceCulture);
             }
         }
         

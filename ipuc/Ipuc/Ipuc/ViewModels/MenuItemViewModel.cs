@@ -42,6 +42,16 @@
                 MainViewModels.GetInstance().MyProfile = new MyProfileViewModel();
                 App.Navigator.PushAsync(new MyProfilePage());
             }
+            else if (this.PageName == "RegisterMembersPage")
+            {
+                MainViewModels.GetInstance().Members = new RegisterMembersViewModels();
+                App.Navigator.PushAsync(new RegisterMembersPage());
+            }
+            else if (this.PageName == "ListMembersPage")
+            {
+                MainViewModels.GetInstance().MembersList = new MembersViewModels();
+                App.Navigator.PushAsync(new MembersPage());
+            }
         }
         #endregion
     }

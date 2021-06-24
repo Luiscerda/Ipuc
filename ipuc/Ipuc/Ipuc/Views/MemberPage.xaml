@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ipuc.Views.MemberPage"
+             xmlns:i18n="clr-namespace:Ipuc.Helpers"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="{i18n:Translate InformationMember}">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Member}" Padding="5">
+            <Label
+                HorizontalOptions="Center"
+                FontSize="Medium"
+                Text="{Binding Member.FullName,Mode=TwoWay}"
+                TextColor="Black">
+            </Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{i18n:Translate IdentificationMembers}"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    IsEnabled="False"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Keyboard="Numeric"
+                    Placeholder="{i18n:Translate IdentificacionMembersPlaceHolder}"
+                    TextColor="Black"
+                    Text="{Binding Member.Identificacion,Mode=TwoWay}">
+                </Entry>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="{i18n:Translate PhoneLabel}"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Keyboard="Telephone"
+                    Placeholder="{i18n:Translate PhonePlaceHolder}"
+                    TextColor="Black"
+                    Text="{Binding Member.Telephone,Mode=TwoWay}">
+                </Entry>
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="{i18n:Translate DirectionLabel}"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Keyboard="Text"
+                    Placeholder="{i18n:Translate DirectionPlaceHolder}"
+                    TextColor="Black"
+                    Text="{Binding Member.Direccion,Mode=TwoWay}">
+                </Entry>
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="{i18n:Translate BaptizedLabel}"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Switch
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    IsToggled="{Binding Member.Bautizado, Mode=TwoWay}"
+                    HorizontalOptions="End">
+                </Switch>
+
+            </Grid>
+            <ActivityIndicator
+                    IsRunning="{Binding IsRunning,Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+            </ActivityIndicator>
+            <StackLayout Margin="40,0" Orientation="Horizontal" VerticalOptions="End">
+                <Button
+                        BackgroundColor="Navy"
+                        CornerRadius="23"
+                        Command="{Binding UpdateCommand}"
+                        HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="{i18n:Translate Update}"
+                        TextColor="White">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

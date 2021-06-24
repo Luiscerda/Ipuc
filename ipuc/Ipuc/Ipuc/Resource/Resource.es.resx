@@ -120,6 +120,12 @@
   <data name="Accept" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="AddressValidation" xml:space="preserve">
+    <value>Debe ingresar una dirección</value>
+  </data>
+  <data name="BaptizedLabel" xml:space="preserve">
+    <value>Bautizado</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -156,6 +162,12 @@
   <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
     <value>Ingrese su contraseña actual...</value>
   </data>
+  <data name="DirectionLabel" xml:space="preserve">
+    <value>Direccion</value>
+  </data>
+  <data name="DirectionPlaceHolder" xml:space="preserve">
+    <value>Digite su direccion</value>
+  </data>
   <data name="EMail" xml:space="preserve">
     <value>E-Mail</value>
   </data>
@@ -189,14 +201,35 @@
   <data name="FromGallery" xml:space="preserve">
     <value>Desde la galería</value>
   </data>
+  <data name="IdentificacionMembersPlaceHolder" xml:space="preserve">
+    <value>Digite su identificacion</value>
+  </data>
+  <data name="IdentificacionValidation" xml:space="preserve">
+    <value>Debe ingresar una identificación</value>
+  </data>
+  <data name="IdentificationMembers" xml:space="preserve">
+    <value>Identificacion</value>
+  </data>
+  <data name="InformationMember" xml:space="preserve">
+    <value>Informacion</value>
+  </data>
   <data name="LastNameLabel" xml:space="preserve">
     <value>Apellidos</value>
+  </data>
+  <data name="LastNameMembers" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="LastNameMembersPlaceHolder" xml:space="preserve">
+    <value>Digite su apellido</value>
   </data>
   <data name="LastNamePlaceHolder" xml:space="preserve">
     <value>Ingresa apellidos...</value>
   </data>
   <data name="LastNameValidation" xml:space="preserve">
     <value>Debes ingresar apellido(s).</value>
+  </data>
+  <data name="ListMembers" xml:space="preserve">
+    <value>Miembros</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Iniciar Sesión</value>
@@ -207,8 +240,17 @@
   <data name="LogOut" xml:space="preserve">
     <value>Cerrar Sesión</value>
   </data>
+  <data name="MembersRegisterMessage" xml:space="preserve">
+    <value>El miembro se ha registrado con éxito</value>
+  </data>
   <data name="MyProfile" xml:space="preserve">
     <value>Mi perfil</value>
+  </data>
+  <data name="NameMembers" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="NameMembersPlaceholder" xml:space="preserve">
+    <value>Digite su nombre</value>
   </data>
   <data name="NewPassword" xml:space="preserve">
     <value>Contraseña nueva</value>
@@ -257,6 +299,12 @@
   </data>
   <data name="SourceImageQuestion" xml:space="preserve">
     <value>¿De donde quieres tomar la imagen?</value>
+  </data>
+  <data name="TitleMembers" xml:space="preserve">
+    <value>Registro de miembros</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Modificar</value>
   </data>
   <data name="UserRegisteredMessage" xml:space="preserve">
     <value>Usuario registrado, ya puedes ingresar con este email y clave asignada.</value>

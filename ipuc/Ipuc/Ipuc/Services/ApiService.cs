@@ -9,6 +9,8 @@
     using System.Threading.Tasks;
     using Domain;
     using System.Net.Http.Headers;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     public class ApiService
     {
@@ -39,7 +41,41 @@
                 Message = "Ok",
             };
         }
+        public async Task<Response> GetList<T>(string urlBase, string servicePrefix, string controller)
+        {
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(urlBase);
+                var url = string.Format("{0}{1}", servicePrefix, controller);
+                var response = await client.GetAsync(url);
+                var result = await response.Content.ReadAsStringAsync();
 
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = response.StatusCode.ToString(),
+                    };
+                }
+                var model = JsonConvert.DeserializeObject<T>(result);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "OK",
+                    Result = model,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
         public async Task<TokenResponse> GetToken(string urlBase,string userName, string password)
         {
             try
