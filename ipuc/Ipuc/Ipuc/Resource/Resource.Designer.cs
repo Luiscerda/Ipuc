@@ -628,6 +628,15 @@ namespace Ipuc.Resource {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Member has been modified successfully.
+        /// </summary>
+        public static string UpdateMembersMessage {
+            get {
+                return ResourceManager.GetString("UpdateMembersMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The user was create, now you can login with this email and password..
         /// </summary>
         public static string UserRegisteredMessage {

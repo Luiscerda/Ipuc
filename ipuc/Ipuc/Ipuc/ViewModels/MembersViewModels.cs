@@ -19,7 +19,7 @@ namespace Ipuc.ViewModels
         #endregion
 
         #region Attributes
-        private List<Members> listMembers;
+        public List<Members> listMembers;
         private ObservableCollection<MembersItemViewModels> members;
         private bool isRefreshing;
         private string filter;
@@ -113,7 +113,7 @@ namespace Ipuc.ViewModels
             this.IsRefreshing = false;
         }
 
-        private IEnumerable<MembersItemViewModels> ToMemberItemViewModel()
+        public IEnumerable<MembersItemViewModels> ToMemberItemViewModel()
         {
             return this.listMembers.Select(b => new MembersItemViewModels
             {

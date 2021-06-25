@@ -4,6 +4,7 @@ using Ipuc.Models;
 using Ipuc.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -19,6 +20,7 @@ namespace Ipuc.ViewModels
         #region Attributes
         private bool isRunning;
         private bool isEnabled;
+        private List<Members> listMembers;
         #endregion
 
         #region Properties
@@ -93,6 +95,45 @@ namespace Ipuc.ViewModels
             }
 
             var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
+            var response = await this.apiService.Put(
+                apiSecurity,
+                "/api",
+                "/Members",
+                MainViewModels.GetInstance().TokenType,
+                MainViewModels.GetInstance().Token,
+                this.Member);
+            if (!response.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    response.Message,
+                    Languages.Accept);
+                return;
+            }
+
+            this.IsRunning = false;
+            this.IsEnabled = true;
+            var response2 = await this.apiService.GetList<List<Members>>(apiSecurity, "/api", "/Members");
+
+            if (!response2.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    response.Message,
+                    "Accept");
+                return;
+            }
+            var mainViewModel = MainViewModels.GetInstance();
+            mainViewModel.MembersList.listMembers = (List<Members>)response2.Result;
+            mainViewModel.MembersList.Members = new  ObservableCollection<MembersItemViewModels>(mainViewModel.MembersList.ToMemberItemViewModel());
+            await Application.Current.MainPage.DisplayAlert(
+               Languages.ConfirmLabel,
+               Languages.UpdateMembersMessage,
+               Languages.Accept);
+
+            await App.Navigator.PopAsync();
         }
         #endregion
     }

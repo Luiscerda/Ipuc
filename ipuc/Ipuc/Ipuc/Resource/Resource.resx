@@ -306,6 +306,9 @@
   <data name="Update" xml:space="preserve">
     <value>Update</value>
   </data>
+  <data name="UpdateMembersMessage" xml:space="preserve">
+    <value>Member has been modified successfully</value>
+  </data>
   <data name="UserRegisteredMessage" xml:space="preserve">
     <value>The user was create, now you can login with this email and password.</value>
   </data>

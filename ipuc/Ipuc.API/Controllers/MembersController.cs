@@ -22,8 +22,7 @@ namespace Ipuc.API.Controllers
         // GET: api/Members
         public IQueryable<Members> GetMembers()
         {
-            var lista = db.Members;
-            return lista;
+            return db.Members;
         }
 
         // GET: api/Members/5
@@ -40,6 +39,7 @@ namespace Ipuc.API.Controllers
         }
 
         // PUT: api/Members/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutMembers(string id, Members members)
         {

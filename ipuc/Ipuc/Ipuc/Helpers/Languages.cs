@@ -301,5 +301,9 @@
         {
             get { return Resource.Update; }
         }
+        public static string UpdateMembersMessage
+        {
+            get { return Resource.UpdateMembersMessage; }
+        }
     }
 }

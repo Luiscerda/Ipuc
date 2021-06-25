@@ -15,9 +15,9 @@
         public string FullName { get; set; }
         public string IsBautizado { get; set; }
 
-        //public override int GetHashCode()
-        //{
-        //    return Convert.ToInt32(Identificacion);
-        //}
+        public override int GetHashCode()
+        {
+            return Convert.ToInt32(Identificacion);
+        }
     }
 }
